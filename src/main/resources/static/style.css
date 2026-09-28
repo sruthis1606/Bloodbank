@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7fb;
+    color: #252525;
+}
+
+/* TOP BAR */
+
+.topbar {
+    background: #a71930;
+    color: white;
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.topbar h1 {
+    font-size: 27px;
+    margin-bottom: 4px;
+}
+
+.topbar p {
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+.status {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 9px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #72e572;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+/* MAIN */
+
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* WELCOME */
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.welcome p {
+    color: #777;
+}
+
+/* BUTTONS */
+
+button {
+    background: #a71930;
+    color: white;
+    border: none;
+    padding: 10px 17px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #851326;
+    transform: translateY(-1px);
+}
+
+.warning-btn {
+    background: #d88a00;
+}
+
+.warning-btn:hover {
+    background: #b87300;
+}
+
+/* DASHBOARD CARDS */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.09);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    background: #fff0f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.card p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.card h3 {
+    font-size: 25px;
+    color: #a71930;
+}
+
+/* PANELS */
+
+.panel {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 22px;
+    border: 1px solid #eee;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.panel-header h2 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.panel-header p {
+    color: #888;
+    font-size: 13px;
+}
+
+/* WARNING PANEL */
+
+.warning-panel {
+    border-left: 4px solid #d88a00;
+}
+
+/* DATA AREA */
+
+.data-area {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.empty {
+    color: #999;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+/* DATA ITEMS */
+
+.data-area > div {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.data-area > div:last-child {
+    border-bottom: none;
+}
+
+.data-area > div:hover {
+    background: #fafafa;
+}
+
+.data-area p {
+    line-height: 1.7;
+    color: #555;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #999;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topbar {
+        padding: 20px 4%;
+    }
+
+    .container {
+        width: 92%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .welcome,
+    .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

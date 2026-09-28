@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Bank Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div>
+            <h1>🩸 Blood Bank</h1>
+            <p>Management & Inventory System</p>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            System Online
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <h2>Dashboard</h2>
+                <p>Monitor donors, donations and blood inventory.</p>
+            </div>
+
+            <button onclick="loadDashboard()">↻ Refresh</button>
+        </section>
+
+        <!-- DASHBOARD CARDS -->
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <div>
+                    <p>Total Donors</p>
+                    <h3 id="donorCount">0</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🩸</div>
+                <div>
+                    <p>Total Donations</p>
+                    <h3 id="donationCount">0</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📦</div>
+                <div>
+                    <p>Blood Units</p>
+                    <h3 id="bloodUnitCount">0</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <div>
+                    <p>Blood Issued</p>
+                    <h3 id="issueCount">0</h3>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- DONORS -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Donor Management</h2>
+                    <p>View registered blood donors</p>
+                </div>
+
+                <button onclick="loadDonors()">View Donors</button>
+            </div>
+
+            <div id="donorList" class="data-area">
+                <p class="empty">Click "View Donors" to load donor information.</p>
+            </div>
+
+        </section>
+
+        <!-- BLOOD INVENTORY -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Blood Inventory</h2>
+                    <p>Current blood stock in the bank</p>
+                </div>
+
+                <button onclick="loadBloodUnits()">View Inventory</button>
+            </div>
+
+            <div id="bloodUnitList" class="data-area">
+                <p class="empty">Click "View Inventory" to load blood units.</p>
+            </div>
+
+        </section>
+
+        <!-- NEAR EXPIRY -->
+
+        <section class="panel warning-panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>⚠ Near Expiry</h2>
+                    <p>Blood units approaching their expiry date</p>
+                </div>
+
+                <button class="warning-btn" onclick="loadNearExpiry()">
+                    Check Units
+                </button>
+            </div>
+
+            <div id="nearExpiryList" class="data-area">
+                <p class="empty">No data loaded.</p>
+            </div>
+
+        </section>
+
+        <!-- ISSUED BLOOD -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Blood Issues</h2>
+                    <p>Recently issued blood units</p>
+                </div>
+
+                <button onclick="loadIssues()">View Issues</button>
+            </div>
+
+            <div id="issueList" class="data-area">
+                <p class="empty">Click "View Issues" to load issue records.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Blood Bank Management System • Spring Boot</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
